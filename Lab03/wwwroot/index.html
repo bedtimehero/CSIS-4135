@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lab 03</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="moment.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Beverage Order</h2>
+        <h3 id="time"></h3>
+        <h3 id="yearago"></h3>
+        <h3 id="diff"></h3>
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Customer Name</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+    </div>
+
+
+    <div class=" form-group">
+        <label for="exampleFormControlSelect1">Beverage</label>
+        <select class="custom-select custom-select-sm">
+            <option selected>Open this select menu</option>
+            <option value="2.50">Coffee</option>
+            <option value="3.00">Tea</option>
+            <option value="7.00">Beer</option>
+            <option value="8.00">Wine</option>
+        </select>
+
+        <label for="exampleFormControlInput1">Quantity</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+
+
+    <!--submit button-->
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+
+
+    <script>
+        let now = moment();
+        document.querySelector("#time").textContent = now;
+        document.querySelector("#yearago").textContent = `A year ago it was ${now.subtract(1, 'years').calender()} `;
+        document.querySelector("#diff").textContent = `Days since semester start! ${now.diff('2018-9-5', 'days')}`;
+    </script>
+
+</body>
+</html>
